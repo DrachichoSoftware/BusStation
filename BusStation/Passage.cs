@@ -31,5 +31,10 @@ namespace BusStation
         public virtual ICollection<Ticket> Tickets { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Waybill> Waybills { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return Date.ToString("D") + " " + Schedule.ToString();
+		}
+	}
 }
