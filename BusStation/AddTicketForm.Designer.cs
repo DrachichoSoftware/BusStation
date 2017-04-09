@@ -41,7 +41,7 @@
 			// passageComboBox
 			// 
 			this.passageComboBox.FormattingEnabled = true;
-			this.passageComboBox.Location = new System.Drawing.Point(147, 62);
+			this.passageComboBox.Location = new System.Drawing.Point(144, 91);
 			this.passageComboBox.Name = "passageComboBox";
 			this.passageComboBox.Size = new System.Drawing.Size(226, 21);
 			this.passageComboBox.TabIndex = 0;
@@ -49,7 +49,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(24, 65);
+			this.label1.Location = new System.Drawing.Point(21, 94);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(35, 13);
 			this.label1.TabIndex = 1;
@@ -58,7 +58,7 @@
 			// passangerComboBox
 			// 
 			this.passangerComboBox.FormattingEnabled = true;
-			this.passangerComboBox.Location = new System.Drawing.Point(147, 111);
+			this.passangerComboBox.Location = new System.Drawing.Point(144, 147);
 			this.passangerComboBox.Name = "passangerComboBox";
 			this.passangerComboBox.Size = new System.Drawing.Size(226, 21);
 			this.passangerComboBox.TabIndex = 3;
@@ -66,7 +66,7 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(21, 18);
+			this.label2.Location = new System.Drawing.Point(21, 42);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(82, 13);
 			this.label2.TabIndex = 4;
@@ -75,7 +75,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(24, 114);
+			this.label3.Location = new System.Drawing.Point(21, 150);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(62, 13);
 			this.label3.TabIndex = 5;
@@ -84,7 +84,7 @@
 			// button1
 			// 
 			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-			this.button1.Location = new System.Drawing.Point(56, 161);
+			this.button1.Location = new System.Drawing.Point(54, 207);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 7;
@@ -94,7 +94,7 @@
 			// button2
 			// 
 			this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			this.button2.Location = new System.Drawing.Point(257, 161);
+			this.button2.Location = new System.Drawing.Point(255, 207);
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 23);
 			this.button2.TabIndex = 8;
@@ -104,7 +104,7 @@
 			// ticketNumberLabel
 			// 
 			this.ticketNumberLabel.AutoSize = true;
-			this.ticketNumberLabel.Location = new System.Drawing.Point(141, 18);
+			this.ticketNumberLabel.Location = new System.Drawing.Point(141, 42);
 			this.ticketNumberLabel.Name = "ticketNumberLabel";
 			this.ticketNumberLabel.Size = new System.Drawing.Size(0, 13);
 			this.ticketNumberLabel.TabIndex = 9;
@@ -113,7 +113,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(384, 205);
+			this.ClientSize = new System.Drawing.Size(385, 250);
 			this.Controls.Add(this.ticketNumberLabel);
 			this.Controls.Add(this.button2);
 			this.Controls.Add(this.button1);

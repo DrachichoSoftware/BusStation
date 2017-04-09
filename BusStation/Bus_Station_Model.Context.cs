@@ -15,11 +15,17 @@ namespace BusStation
     
     public partial class Bus_Station_Context : DbContext
     {
+
+
         public Bus_Station_Context()
             : base("name=Bus_Station_Context")
         {
         }
-    
+
+        public Bus_Station_Context(string nameOrConnectionString) : base(nameOrConnectionString)
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

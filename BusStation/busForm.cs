@@ -63,50 +63,111 @@ namespace BusStation
 
         public BusForm()
         {
+
+            ConnectionForm connectionForm = new ConnectionForm();
+
+            DialogResult result = connectionForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+
+                InitializeComponent();
+
+                _context = connectionForm._context;
+
+                busesDataGridView.DataSource = _context.Buses.Local.ToBindingList();
+                busesDataGridView.Columns["Passages"].Visible = false;
+
+
+                cityDataGridView.DataSource = _context.Cities.Local.ToBindingList();
+                cityDataGridView.Columns["Routes"].Visible = false;
+                cityDataGridView.Columns["Routes1"].Visible = false;
+
+
+                driverDataGridView.DataSource = _context.Drivers.Local.ToBindingList();
+                driverDataGridView.Columns["Waybills"].Visible = false;
+
+
+                passangerDataGridView.DataSource = _context.Passangers.Local.ToBindingList();
+                passangerDataGridView.Columns["Tickets"].Visible = false;
+
+
+                routeDataGridView.DataSource = _context.Routes.Local.ToBindingList();
+                routeDataGridView.Columns["Schedules"].Visible = false;
+
+
+                scheduleDataGridView.DataSource = _context.Schedules.Local.ToBindingList();
+                scheduleDataGridView.Columns["RouteNumber"].Visible = false;
+                scheduleDataGridView.Columns["Passages"].Visible = false;
+
+
+                passagesDataGridView.DataSource = _context.Passages.Local.ToBindingList();
+                passagesDataGridView.Columns["RouteNumber"].Visible = false;
+                passagesDataGridView.Columns["DepartureTime"].Visible = false;
+                passagesDataGridView.Columns["Tickets"].Visible = false;
+                passagesDataGridView.Columns["Waybills"].Visible = false;
+
+
+                ticketsDataGridView.DataSource = _context.Tickets.Local.ToBindingList();
+
+
+                waybillDataGridView.DataSource = _context.Waybills.Local.ToBindingList();
+                waybillDataGridView.Columns["Passage"].Visible = false;
+                waybillDataGridView.Columns["Driver"].Visible = false;
+
+            }
+                connectionForm.Close();
+            
+        }
+
+
+        public BusForm(string con_str)
+        {
             InitializeComponent();
 
-            _context = new Bus_Station_Context();
+            _context = new Bus_Station_Context(con_str);
 
             _context.Buses.Load();
             busesDataGridView.DataSource = _context.Buses.Local.ToBindingList();
-			busesDataGridView.Columns["Passages"].Visible = false;
+            busesDataGridView.Columns["Passages"].Visible = false;
 
-			_context.Cities.Load();
+            _context.Cities.Load();
             cityDataGridView.DataSource = _context.Cities.Local.ToBindingList();
-			cityDataGridView.Columns["Routes"].Visible = false;
-			cityDataGridView.Columns["Routes1"].Visible = false;
+            cityDataGridView.Columns["Routes"].Visible = false;
+            cityDataGridView.Columns["Routes1"].Visible = false;
 
-			_context.Drivers.Load();
+            _context.Drivers.Load();
             driverDataGridView.DataSource = _context.Drivers.Local.ToBindingList();
-			driverDataGridView.Columns["Waybills"].Visible = false;
+            driverDataGridView.Columns["Waybills"].Visible = false;
 
-			_context.Passangers.Load();
+            _context.Passangers.Load();
             passangerDataGridView.DataSource = _context.Passangers.Local.ToBindingList();
-			passangerDataGridView.Columns["Tickets"].Visible = false;
+            passangerDataGridView.Columns["Tickets"].Visible = false;
 
-			_context.Routes.Load();
+            _context.Routes.Load();
             routeDataGridView.DataSource = _context.Routes.Local.ToBindingList();
-			routeDataGridView.Columns["Schedules"].Visible = false;
+            routeDataGridView.Columns["Schedules"].Visible = false;
 
-			_context.Schedules.Load();
+            _context.Schedules.Load();
             scheduleDataGridView.DataSource = _context.Schedules.Local.ToBindingList();
-			scheduleDataGridView.Columns["RouteNumber"].Visible = false;
-			scheduleDataGridView.Columns["Passages"].Visible = false;
+            scheduleDataGridView.Columns["RouteNumber"].Visible = false;
+            scheduleDataGridView.Columns["Passages"].Visible = false;
 
-			_context.Passages.Load();
+            _context.Passages.Load();
             passagesDataGridView.DataSource = _context.Passages.Local.ToBindingList();
-			passagesDataGridView.Columns["RouteNumber"].Visible = false;
-			passagesDataGridView.Columns["DepartureTime"].Visible = false;
-			passagesDataGridView.Columns["Tickets"].Visible = false;
-			passagesDataGridView.Columns["Waybills"].Visible = false;
+            passagesDataGridView.Columns["RouteNumber"].Visible = false;
+            passagesDataGridView.Columns["DepartureTime"].Visible = false;
+            passagesDataGridView.Columns["Tickets"].Visible = false;
+            passagesDataGridView.Columns["Waybills"].Visible = false;
 
-			_context.Tickets.Load();
-			ticketsDataGridView.DataSource = _context.Tickets.Local.ToBindingList();
+            _context.Tickets.Load();
+            ticketsDataGridView.DataSource = _context.Tickets.Local.ToBindingList();
 
-			_context.Waybills.Load();
-			waybillDataGridView.DataSource = _context.Waybills.Local.ToBindingList();
-			waybillDataGridView.Columns["Passage"].Visible = false;
-			waybillDataGridView.Columns["Driver"].Visible = false;
+            _context.Waybills.Load();
+            waybillDataGridView.DataSource = _context.Waybills.Local.ToBindingList();
+            waybillDataGridView.Columns["Passage"].Visible = false;
+            waybillDataGridView.Columns["Driver"].Visible = false;
+
         }
 
         private void InitializeComponent()
@@ -1262,6 +1323,7 @@ namespace BusStation
             AddPassageForm addPassageForm = new AddPassageForm();
 
             addPassageForm.routeСomboBox.DataSource = _context.Schedules.Local.ToList();
+            addPassageForm.busСomboBox.DataSource = _context.Buses.Local.ToList();
 
             DialogResult result = addPassageForm.ShowDialog(this);
             if (result == DialogResult.Cancel)
@@ -1269,33 +1331,16 @@ namespace BusStation
 
             Passage newPassage = new Passage();
             newPassage.Schedule = addPassageForm.routeСomboBox.SelectedItem as Schedule;
-			newPassage.DepartureTime = newPassage.Schedule.DepartureTime;
-			if ((newPassage.Date = addPassageForm.dateTimePicker.Value.Date) + newPassage.DepartureTime < DateTime.Now)
-				MessageBox.Show("Нельзя создавать рейсы в прошлом!");
-			else
-			{
-				addPassageForm.busСomboBox.DataSource = 
-				_context.Buses.Local
-					.Except(_context.Buses
-										.Where(b => b.Passages.Where(p => In(newPassage.Date + newPassage.DepartureTime,
-																				(p.Date + p.DepartureTime).AddMinutes(p.Schedule.Route.TravelTime),
-																				(newPassage.Date + newPassage.DepartureTime).AddMinutes(newPassage.Schedule.Route.TravelTime))).Count() > 0))
-					.ToList();
-				
-				newPassage.Bus = addPassageForm.busСomboBox.SelectedItem as Bus;
-				newPassage.RouteNumber = newPassage.Schedule.RouteNumber;
+            newPassage.Bus = addPassageForm.busСomboBox.SelectedItem as Bus;
+            newPassage.DepartureTime = newPassage.Schedule.DepartureTime;
+            newPassage.RouteNumber = newPassage.Schedule.RouteNumber;
+            newPassage.Date = addPassageForm.dateTimePicker.Value.Date;
 
-				_context.Passages.Add(newPassage);
-				_context.SaveChanges();
-
-				MessageBox.Show("Новый объект добавлен");
-			}
+            _context.Passages.Add(newPassage);
+            _context.SaveChanges();
+            
+            MessageBox.Show("Новый объект добавлен");
         }
-
-		private bool In(DateTime DepartureTime, DateTime d2, DateTime ArrivalTime)
-		{
-			return DepartureTime < d2 && d2 < ArrivalTime;
-		}
 
         private void EditPassageButton_Click(object sender, EventArgs e)
         {
@@ -1328,17 +1373,6 @@ namespace BusStation
 			newTicket.Passage = addTicketForm.passageComboBox.SelectedItem as Passage;
 			newTicket.Passanger = addTicketForm.passangerComboBox.SelectedItem as Passanger;
 			newTicket.TicketNumber =  int.Parse(addTicketForm.ticketNumberLabel.Text);
-
-			var soldSeatNumbers = newTicket.Passage.Tickets.Select(t => t.SeatNumber).ToList();
-			for (int i = 1; i <= newTicket.Passage.Bus.SeatCount; i++)
-			{
-				if (soldSeatNumbers.Contains(i))
-					continue;
-				else
-					newTicket.SeatNumber = i;
-
-				break;
-			}
 
 			_context.Tickets.Add(newTicket);
 			_context.SaveChanges();

@@ -19,6 +19,8 @@ namespace BusStation
             Application.SetCompatibleTextRenderingDefault(false);
 
             Application.Run(new BusForm());
+
+
         }
     }
 }
