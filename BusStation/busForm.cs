@@ -1262,7 +1262,6 @@ namespace BusStation
             AddPassageForm addPassageForm = new AddPassageForm();
 
             addPassageForm.routeСomboBox.DataSource = _context.Schedules.Local.ToList();
-            addPassageForm.busСomboBox.DataSource = _context.Buses.Local.ToList();
 
             DialogResult result = addPassageForm.ShowDialog(this);
             if (result == DialogResult.Cancel)
@@ -1270,16 +1269,33 @@ namespace BusStation
 
             Passage newPassage = new Passage();
             newPassage.Schedule = addPassageForm.routeСomboBox.SelectedItem as Schedule;
-            newPassage.Bus = addPassageForm.busСomboBox.SelectedItem as Bus;
-            newPassage.DepartureTime = newPassage.Schedule.DepartureTime;
-            newPassage.RouteNumber = newPassage.Schedule.RouteNumber;
-            newPassage.Date = addPassageForm.dateTimePicker.Value.Date;
+			newPassage.DepartureTime = newPassage.Schedule.DepartureTime;
+			if ((newPassage.Date = addPassageForm.dateTimePicker.Value.Date) + newPassage.DepartureTime < DateTime.Now)
+				MessageBox.Show("Нельзя создавать рейсы в прошлом!");
+			else
+			{
+				addPassageForm.busСomboBox.DataSource = 
+				_context.Buses.Local
+					.Except(_context.Buses
+										.Where(b => b.Passages.Where(p => In(newPassage.Date + newPassage.DepartureTime,
+																				(p.Date + p.DepartureTime).AddMinutes(p.Schedule.Route.TravelTime),
+																				(newPassage.Date + newPassage.DepartureTime).AddMinutes(newPassage.Schedule.Route.TravelTime))).Count() > 1))
+					.ToList();
+				
+				newPassage.Bus = addPassageForm.busСomboBox.SelectedItem as Bus;
+				newPassage.RouteNumber = newPassage.Schedule.RouteNumber;
 
-            _context.Passages.Add(newPassage);
-            _context.SaveChanges();
-            
-            MessageBox.Show("Новый объект добавлен");
+				_context.Passages.Add(newPassage);
+				_context.SaveChanges();
+
+				MessageBox.Show("Новый объект добавлен");
+			}
         }
+
+		private bool In(DateTime DepartureTime, DateTime d2, DateTime ArrivalTime)
+		{
+			return DepartureTime < d2 && d2 < ArrivalTime;
+		}
 
         private void EditPassageButton_Click(object sender, EventArgs e)
         {
