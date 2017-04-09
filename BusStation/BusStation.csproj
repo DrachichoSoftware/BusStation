@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7517B35D-17E9-4DB6-9063-668CC6C4EF95}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BusStation</RootNamespace>
+    <AssemblyName>BusStation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BusStation.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f4ca07f51760da93, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataConnectionDialog.1.2\lib\Microsoft.Data.ConnectionUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.ConnectionUI.Dialog, Version=0.0.0.0, Culture=neutral, PublicKeyToken=f4ca07f51760da93, processorArchitecture=MSIL">
+      <HintPath>..\packages\DataConnectionDialog.1.2\lib\Microsoft.Data.ConnectionUI.Dialog.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Data.Core, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCityForm.Designer.cs">
+      <DependentUpon>AddCityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddDriverForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDriverForm.Designer.cs">
+      <DependentUpon>AddDriverForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPassageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPassageForm.Designer.cs">
+      <DependentUpon>AddPassageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddPassangerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPassangerForm.Designer.cs">
+      <DependentUpon>AddPassangerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addRouteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addRouteForm.Designer.cs">
+      <DependentUpon>addRouteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddScheduleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddScheduleForm.Designer.cs">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTicketForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTicketForm.Designer.cs">
+      <DependentUpon>AddTicketForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddWaybillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddWaybillForm.Designer.cs">
+      <DependentUpon>AddWaybillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Analytics.cs" />
+    <Compile Include="Bus.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="busForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bus_Station_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bus_Station_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bus_Station_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Bus_Station_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bus_Station_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionForm.Designer.cs">
+      <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddBusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBusForm.Designer.cs">
+      <DependentUpon>AddBusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Passage.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Passanger.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Route.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Waybill.cs">
+      <DependentUpon>Bus_Station_Model.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddCityForm.resx">
+      <DependentUpon>AddCityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDriverForm.resx">
+      <DependentUpon>AddDriverForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPassageForm.resx">
+      <DependentUpon>AddPassageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddPassangerForm.resx">
+      <DependentUpon>AddPassangerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addRouteForm.resx">
+      <DependentUpon>addRouteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddScheduleForm.resx">
+      <DependentUpon>AddScheduleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTicketForm.resx">
+      <DependentUpon>AddTicketForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWaybillForm.resx">
+      <DependentUpon>AddWaybillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="busForm.resx">
+      <DependentUpon>busForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddBusForm.resx">
+      <DependentUpon>AddBusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionForm.resx">
+      <DependentUpon>ConnectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Bus_Station_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Bus_Station_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Bus_Station_Model.edmx.diagram">
+      <DependentUpon>Bus_Station_Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bus_Station_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Bus_Station_Model.edmx</DependentUpon>
+      <LastGenOutput>Bus_Station_Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Bus_Station_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Bus_Station_Model.edmx</DependentUpon>
+      <LastGenOutput>Bus_Station_Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

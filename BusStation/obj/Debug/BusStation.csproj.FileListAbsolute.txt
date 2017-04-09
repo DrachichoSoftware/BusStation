@@ -1,0 +1,136 @@
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\BusStation.exe.config
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\BusStation.exe
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\BusStation.pdb
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\EntityFramework.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\EntityFramework.xml
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.csprojResolveAssemblyReference.cache
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.Properties.Resources.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.csproj.GenerateResource.Cache
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.exe
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.pdb
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddBusForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.busForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddCityForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddDriverForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddPassangerForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.Dialog.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\bin\Debug\ru\Microsoft.VisualStudio.Data.Core.resources.dll
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.ConnectionForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddRouteForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddScheduleForm.resources
+C:\Users\1\Desktop\8 семестр\СТРИИС\BusStation\BusStation\obj\Debug\BusStation.AddPassageForm.resources
+I:\BusStation\BusStation\bin\Debug\BusStation.exe.config
+I:\BusStation\BusStation\bin\Debug\BusStation.exe
+I:\BusStation\BusStation\bin\Debug\BusStation.pdb
+I:\BusStation\BusStation\bin\Debug\EntityFramework.dll
+I:\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.dll
+I:\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.Dialog.dll
+I:\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.dll
+I:\BusStation\BusStation\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+I:\BusStation\BusStation\bin\Debug\EntityFramework.xml
+I:\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.xml
+I:\BusStation\BusStation\bin\Debug\ru\EntityFramework.resources.dll
+I:\BusStation\BusStation\bin\Debug\ru\Microsoft.VisualStudio.Data.Core.resources.dll
+I:\BusStation\BusStation\obj\Debug\BusStation.csprojResolveAssemblyReference.cache
+I:\BusStation\BusStation\obj\Debug\BusStation.AddCityForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddDriverForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddPassageForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddPassangerForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddRouteForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddScheduleForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.busForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddBusForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.ConnectionForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.Properties.Resources.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.csproj.GenerateResource.Cache
+I:\BusStation\BusStation\obj\Debug\BusStation.exe
+I:\BusStation\BusStation\obj\Debug\BusStation.pdb
+I:\BusStation\BusStation\obj\Debug\BusStation.AddTicketForm.resources
+I:\BusStation\BusStation\obj\Debug\BusStation.AddWaybillForm.resources
+D:\NewBusStation\BusStation\BusStation\bin\Debug\BusStation.exe.config
+D:\NewBusStation\BusStation\BusStation\bin\Debug\BusStation.exe
+D:\NewBusStation\BusStation\BusStation\bin\Debug\BusStation.pdb
+D:\NewBusStation\BusStation\BusStation\bin\Debug\EntityFramework.dll
+D:\NewBusStation\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.dll
+D:\NewBusStation\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.Dialog.dll
+D:\NewBusStation\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.dll
+D:\NewBusStation\BusStation\BusStation\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+D:\NewBusStation\BusStation\BusStation\bin\Debug\EntityFramework.xml
+D:\NewBusStation\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.xml
+D:\NewBusStation\BusStation\BusStation\bin\Debug\ru\EntityFramework.resources.dll
+D:\NewBusStation\BusStation\BusStation\bin\Debug\ru\Microsoft.VisualStudio.Data.Core.resources.dll
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.csprojResolveAssemblyReference.cache
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddCityForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddDriverForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddPassageForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddPassangerForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddRouteForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddScheduleForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddTicketForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddWaybillForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.busForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.AddBusForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.ConnectionForm.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.Properties.Resources.resources
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.csproj.GenerateResource.Cache
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.exe
+D:\NewBusStation\BusStation\BusStation\obj\Debug\BusStation.pdb
+H:\BusStation\BusStation\bin\Debug\BusStation.exe.config
+H:\BusStation\BusStation\obj\Debug\BusStation.exe
+H:\BusStation\BusStation\obj\Debug\BusStation.pdb
+H:\BusStation\BusStation\bin\Debug\BusStation.exe
+H:\BusStation\BusStation\bin\Debug\BusStation.pdb
+H:\BusStation\BusStation\bin\Debug\EntityFramework.dll
+H:\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.dll
+H:\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.Dialog.dll
+H:\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.dll
+H:\BusStation\BusStation\bin\Debug\EntityFramework.xml
+H:\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.xml
+H:\BusStation\BusStation\bin\Debug\ru\EntityFramework.resources.dll
+H:\BusStation\BusStation\obj\Debug\BusStation.csprojResolveAssemblyReference.cache
+H:\BusStation\BusStation\obj\Debug\BusStation.AddCityForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddDriverForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddPassageForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddPassangerForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddRouteForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddScheduleForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddTicketForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddWaybillForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.busForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.AddBusForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.ConnectionForm.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.Properties.Resources.resources
+H:\BusStation\BusStation\obj\Debug\BusStation.csproj.GenerateResource.Cache
+E:\BusStation\BusStation\bin\Debug\BusStation.exe.config
+E:\BusStation\BusStation\bin\Debug\BusStation.exe
+E:\BusStation\BusStation\bin\Debug\BusStation.pdb
+E:\BusStation\BusStation\bin\Debug\EntityFramework.dll
+E:\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.dll
+E:\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.Dialog.dll
+E:\BusStation\BusStation\bin\Debug\Microsoft.Data.ConnectionUI.dll
+E:\BusStation\BusStation\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+E:\BusStation\BusStation\bin\Debug\EntityFramework.xml
+E:\BusStation\BusStation\bin\Debug\EntityFramework.SqlServer.xml
+E:\BusStation\BusStation\bin\Debug\ru\EntityFramework.resources.dll
+E:\BusStation\BusStation\bin\Debug\ru\Microsoft.VisualStudio.Data.Core.resources.dll
+E:\BusStation\BusStation\obj\Debug\BusStation.csprojResolveAssemblyReference.cache
+E:\BusStation\BusStation\obj\Debug\BusStation.AddCityForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddDriverForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddPassageForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddPassangerForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddRouteForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddScheduleForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddTicketForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddWaybillForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.busForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.AddBusForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.ConnectionForm.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.Properties.Resources.resources
+E:\BusStation\BusStation\obj\Debug\BusStation.csproj.GenerateResource.Cache
+E:\BusStation\BusStation\obj\Debug\BusStation.exe
+E:\BusStation\BusStation\obj\Debug\BusStation.pdb

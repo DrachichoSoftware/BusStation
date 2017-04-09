@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Bus_stationContext" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bus">
+    <Key>
+      <PropertyRef Name="VIN" />
+    </Key>
+    <Property Name="VIN" Type="String" MaxLength="17" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SeatCount" Type="Int32" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Passages" Relationship="Self.FK_PASSAGE_REFERENCE_BUS" FromRole="Bus" ToRole="Passage" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityNumber" />
+    </Key>
+    <Property Name="CityNumber" Type="Int32" Nullable="false" />
+    <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Routes" Relationship="Self.FK_ROUTE_CITYFROM_CITY" FromRole="City" ToRole="Route" />
+    <NavigationProperty Name="Routes1" Relationship="Self.FK_ROUTE_CITYTO_CITY" FromRole="City" ToRole="Route" />
+  </EntityType>
+  <EntityType Name="Driver">
+    <Key>
+      <PropertyRef Name="SNILS" />
+    </Key>
+    <Property Name="SNILS" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Passport" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DriverLicence" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Waybills" Relationship="Self.FK_WAYBILL_REFERENCE_DRIVER" FromRole="Driver" ToRole="Waybill" />
+  </EntityType>
+  <EntityType Name="Passage">
+    <Key>
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="DepartureTime" />
+      <PropertyRef Name="RouteNumber" />
+    </Key>
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="RouteNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Bus" Relationship="Self.FK_PASSAGE_REFERENCE_BUS" FromRole="Passage" ToRole="Bus" />
+    <NavigationProperty Name="Schedule" Relationship="Self.FK_PASSAGE_REFERENCE_SCHEDULE" FromRole="Passage" ToRole="Schedule" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_TICKET_REFERENCE_PASSAGE" FromRole="Passage" ToRole="Ticket" />
+    <NavigationProperty Name="Waybills" Relationship="Self.FK_WAYBILL_REFERENCE_PASSAGE" FromRole="Passage" ToRole="Waybill" />
+  </EntityType>
+  <EntityType Name="Passanger">
+    <Key>
+      <PropertyRef Name="Passport" />
+    </Key>
+    <Property Name="Passport" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Tickets" Relationship="Self.FK_TICKET_REFERENCE_PASSANGE" FromRole="Passanger" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="RouteNumber" />
+    </Key>
+    <Property Name="RouteNumber" Type="Int32" Nullable="false" />
+    <Property Name="KM" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK_ROUTE_CITYFROM_CITY" FromRole="Route" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="Self.FK_ROUTE_CITYTO_CITY" FromRole="Route" ToRole="City" />
+    <NavigationProperty Name="Schedules" Relationship="Self.FK_SCHEDULE_REFERENCE_ROUTE" FromRole="Route" ToRole="Schedule" />
+  </EntityType>
+  <EntityType Name="Schedule">
+    <Key>
+      <PropertyRef Name="DepartureTime" />
+      <PropertyRef Name="RouteNumber" />
+    </Key>
+    <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="RouteNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Passages" Relationship="Self.FK_PASSAGE_REFERENCE_SCHEDULE" FromRole="Schedule" ToRole="Passage" />
+    <NavigationProperty Name="Route" Relationship="Self.FK_SCHEDULE_REFERENCE_ROUTE" FromRole="Schedule" ToRole="Route" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="TicketNumber" />
+    </Key>
+    <Property Name="TicketNumber" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Passage" Relationship="Self.FK_TICKET_REFERENCE_PASSAGE" FromRole="Ticket" ToRole="Passage" />
+    <NavigationProperty Name="Passanger" Relationship="Self.FK_TICKET_REFERENCE_PASSANGE" FromRole="Ticket" ToRole="Passanger" />
+  </EntityType>
+  <EntityType Name="Waybill">
+    <Key>
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="DepartureTime" />
+      <PropertyRef Name="RouteNumber" />
+      <PropertyRef Name="SNILS" />
+      <PropertyRef Name="WaybillNumber" />
+    </Key>
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DepartureTime" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="RouteNumber" Type="Int32" Nullable="false" />
+    <Property Name="SNILS" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="WaybillNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Driver" Relationship="Self.FK_WAYBILL_REFERENCE_DRIVER" FromRole="Waybill" ToRole="Driver" />
+    <NavigationProperty Name="Passage" Relationship="Self.FK_WAYBILL_REFERENCE_PASSAGE" FromRole="Waybill" ToRole="Passage" />
+  </EntityType>
+  <Association Name="FK_PASSAGE_REFERENCE_BUS">
+    <End Role="Bus" Type="Self.Bus" Multiplicity="1" />
+    <End Role="Passage" Type="Self.Passage" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_ROUTE_CITYFROM_CITY">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_ROUTE_CITYTO_CITY">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Route" Type="Self.Route" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WAYBILL_REFERENCE_DRIVER">
+    <End Role="Driver" Type="Self.Driver" Multiplicity="1" />
+    <End Role="Waybill" Type="Self.Waybill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Driver">
+        <PropertyRef Name="SNILS" />
+      </Principal>
+      <Dependent Role="Waybill">
+        <PropertyRef Name="SNILS" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PASSAGE_REFERENCE_SCHEDULE">
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="1" />
+    <End Role="Passage" Type="Self.Passage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Schedule">
+        <PropertyRef Name="DepartureTime" />
+        <PropertyRef Name="RouteNumber" />
+      </Principal>
+      <Dependent Role="Passage">
+        <PropertyRef Name="DepartureTime" />
+        <PropertyRef Name="RouteNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TICKET_REFERENCE_PASSAGE">
+    <End Role="Passage" Type="Self.Passage" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_WAYBILL_REFERENCE_PASSAGE">
+    <End Role="Passage" Type="Self.Passage" Multiplicity="1" />
+    <End Role="Waybill" Type="Self.Waybill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Passage">
+        <PropertyRef Name="Date" />
+        <PropertyRef Name="DepartureTime" />
+        <PropertyRef Name="RouteNumber" />
+      </Principal>
+      <Dependent Role="Waybill">
+        <PropertyRef Name="Date" />
+        <PropertyRef Name="DepartureTime" />
+        <PropertyRef Name="RouteNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TICKET_REFERENCE_PASSANGE">
+    <End Role="Passanger" Type="Self.Passanger" Multiplicity="0..1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_SCHEDULE_REFERENCE_ROUTE">
+    <End Role="Route" Type="Self.Route" Multiplicity="1" />
+    <End Role="Schedule" Type="Self.Schedule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route">
+        <PropertyRef Name="RouteNumber" />
+      </Principal>
+      <Dependent Role="Schedule">
+        <PropertyRef Name="RouteNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Bus_Station_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Buses" EntityType="Self.Bus" />
+    <EntitySet Name="Cities" EntityType="Self.City" />
+    <EntitySet Name="Drivers" EntityType="Self.Driver" />
+    <EntitySet Name="Passages" EntityType="Self.Passage" />
+    <EntitySet Name="Passangers" EntityType="Self.Passanger" />
+    <EntitySet Name="Routes" EntityType="Self.Route" />
+    <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+    <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+    <EntitySet Name="Waybills" EntityType="Self.Waybill" />
+    <AssociationSet Name="FK_PASSAGE_REFERENCE_BUS" Association="Self.FK_PASSAGE_REFERENCE_BUS">
+      <End Role="Bus" EntitySet="Buses" />
+      <End Role="Passage" EntitySet="Passages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROUTE_CITYFROM_CITY" Association="Self.FK_ROUTE_CITYFROM_CITY">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROUTE_CITYTO_CITY" Association="Self.FK_ROUTE_CITYTO_CITY">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Route" EntitySet="Routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WAYBILL_REFERENCE_DRIVER" Association="Self.FK_WAYBILL_REFERENCE_DRIVER">
+      <End Role="Driver" EntitySet="Drivers" />
+      <End Role="Waybill" EntitySet="Waybills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PASSAGE_REFERENCE_SCHEDULE" Association="Self.FK_PASSAGE_REFERENCE_SCHEDULE">
+      <End Role="Schedule" EntitySet="Schedules" />
+      <End Role="Passage" EntitySet="Passages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TICKET_REFERENCE_PASSAGE" Association="Self.FK_TICKET_REFERENCE_PASSAGE">
+      <End Role="Passage" EntitySet="Passages" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WAYBILL_REFERENCE_PASSAGE" Association="Self.FK_WAYBILL_REFERENCE_PASSAGE">
+      <End Role="Passage" EntitySet="Passages" />
+      <End Role="Waybill" EntitySet="Waybills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TICKET_REFERENCE_PASSANGE" Association="Self.FK_TICKET_REFERENCE_PASSANGE">
+      <End Role="Passanger" EntitySet="Passangers" />
+      <End Role="Ticket" EntitySet="Tickets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SCHEDULE_REFERENCE_ROUTE" Association="Self.FK_SCHEDULE_REFERENCE_ROUTE">
+      <End Role="Route" EntitySet="Routes" />
+      <End Role="Schedule" EntitySet="Schedules" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

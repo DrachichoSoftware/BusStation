@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Bus_stationContextContainer" CdmEntityContainer="Bus_Station_Entities">
+    <EntitySetMapping Name="Buses">
+      <EntityTypeMapping TypeName="Bus_stationContext.Bus">
+        <MappingFragment StoreEntitySet="Bus">
+          <ScalarProperty Name="VIN" ColumnName="VIN" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="SeatCount" ColumnName="SeatCount" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="Bus_stationContext.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="CityNumber" ColumnName="CityNumber" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drivers">
+      <EntityTypeMapping TypeName="Bus_stationContext.Driver">
+        <MappingFragment StoreEntitySet="Driver">
+          <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="DriverLicence" ColumnName="DriverLicence" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Passages">
+      <EntityTypeMapping TypeName="Bus_stationContext.Passage">
+        <MappingFragment StoreEntitySet="Passage">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Passangers">
+      <EntityTypeMapping TypeName="Bus_stationContext.Passanger">
+        <MappingFragment StoreEntitySet="Passanger">
+          <ScalarProperty Name="Passport" ColumnName="Passport" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="Bus_stationContext.Route">
+        <MappingFragment StoreEntitySet="Route">
+          <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+          <ScalarProperty Name="KM" ColumnName="KM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Schedules">
+      <EntityTypeMapping TypeName="Bus_stationContext.Schedule">
+        <MappingFragment StoreEntitySet="Schedule">
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tickets">
+      <EntityTypeMapping TypeName="Bus_stationContext.Ticket">
+        <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waybills">
+      <EntityTypeMapping TypeName="Bus_stationContext.Waybill">
+        <MappingFragment StoreEntitySet="Waybill">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+          <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+          <ScalarProperty Name="SNILS" ColumnName="SNILS" />
+          <ScalarProperty Name="WaybillNumber" ColumnName="WaybillNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_PASSAGE_REFERENCE_BUS" TypeName="Bus_stationContext.FK_PASSAGE_REFERENCE_BUS" StoreEntitySet="Passage">
+      <EndProperty Name="Bus">
+        <ScalarProperty Name="VIN" ColumnName="VIN" />
+      </EndProperty>
+      <EndProperty Name="Passage">
+        <ScalarProperty Name="Date" ColumnName="Date" />
+        <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+        <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ROUTE_CITYFROM_CITY" TypeName="Bus_stationContext.FK_ROUTE_CITYFROM_CITY" StoreEntitySet="Route">
+      <EndProperty Name="City">
+        <ScalarProperty Name="CityNumber" ColumnName="CityFrom" />
+      </EndProperty>
+      <EndProperty Name="Route">
+        <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_ROUTE_CITYTO_CITY" TypeName="Bus_stationContext.FK_ROUTE_CITYTO_CITY" StoreEntitySet="Route">
+      <EndProperty Name="City">
+        <ScalarProperty Name="CityNumber" ColumnName="CityTo" />
+      </EndProperty>
+      <EndProperty Name="Route">
+        <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TICKET_REFERENCE_PASSAGE" TypeName="Bus_stationContext.FK_TICKET_REFERENCE_PASSAGE" StoreEntitySet="Ticket">
+      <EndProperty Name="Passage">
+        <ScalarProperty Name="Date" ColumnName="Date" />
+        <ScalarProperty Name="DepartureTime" ColumnName="DepartureTime" />
+        <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
+      </EndProperty>
+      <EndProperty Name="Ticket">
+        <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="Date" />
+      <Condition IsNull="false" ColumnName="DepartureTime" />
+      <Condition IsNull="false" ColumnName="RouteNumber" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_TICKET_REFERENCE_PASSANGE" TypeName="Bus_stationContext.FK_TICKET_REFERENCE_PASSANGE" StoreEntitySet="Ticket">
+      <EndProperty Name="Passanger">
+        <ScalarProperty Name="Passport" ColumnName="Passport" />
+      </EndProperty>
+      <EndProperty Name="Ticket">
+        <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
+      </EndProperty>
+      <Condition IsNull="false" ColumnName="Passport" />
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
