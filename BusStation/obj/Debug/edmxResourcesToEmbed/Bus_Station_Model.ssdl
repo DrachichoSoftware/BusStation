@@ -53,6 +53,7 @@
     <Property Name="CityTo" Type="int" Nullable="false" />
     <Property Name="CityFrom" Type="int" Nullable="false" />
     <Property Name="KM" Type="int" Nullable="false" />
+    <Property Name="TravelTime" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Schedule">
     <Key>
@@ -71,6 +72,8 @@
     <Property Name="Date" Type="date" />
     <Property Name="DepartureTime" Type="time" Precision="0" />
     <Property Name="RouteNumber" Type="int" />
+    <Property Name="Discount" Type="bit" Nullable="false" />
+    <Property Name="SeatNumber" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Waybill">
     <Key>

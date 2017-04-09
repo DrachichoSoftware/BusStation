@@ -28,5 +28,10 @@ namespace BusStation
         public virtual ICollection<Route> Routes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Route> Routes1 { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return CityName;
+		}
+	}
 }

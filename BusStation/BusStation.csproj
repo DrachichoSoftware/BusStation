@@ -104,11 +104,11 @@
     <Compile Include="AddPassangerForm.Designer.cs">
       <DependentUpon>AddPassangerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="addRouteForm.cs">
+    <Compile Include="AddRouteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addRouteForm.Designer.cs">
-      <DependentUpon>addRouteForm.cs</DependentUpon>
+    <Compile Include="AddRouteForm.Designer.cs">
+      <DependentUpon>AddRouteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AddScheduleForm.cs">
       <SubType>Form</SubType>
@@ -132,7 +132,7 @@
     <Compile Include="Bus.cs">
       <DependentUpon>Bus_Station_Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="busForm.cs">
+    <Compile Include="BusForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bus_Station_Model.Context.cs">
@@ -200,8 +200,8 @@
     <EmbeddedResource Include="AddPassangerForm.resx">
       <DependentUpon>AddPassangerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addRouteForm.resx">
-      <DependentUpon>addRouteForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddRouteForm.resx">
+      <DependentUpon>AddRouteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddScheduleForm.resx">
       <DependentUpon>AddScheduleForm.cs</DependentUpon>
@@ -212,8 +212,8 @@
     <EmbeddedResource Include="AddWaybillForm.resx">
       <DependentUpon>AddWaybillForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="busForm.resx">
-      <DependentUpon>busForm.cs</DependentUpon>
+    <EmbeddedResource Include="BusForm.resx">
+      <DependentUpon>BusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddBusForm.resx">
       <DependentUpon>AddBusForm.cs</DependentUpon>

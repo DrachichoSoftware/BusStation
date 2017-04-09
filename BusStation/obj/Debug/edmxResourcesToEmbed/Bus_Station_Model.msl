@@ -51,6 +51,7 @@
     <EntitySetMapping Name="Routes">
       <EntityTypeMapping TypeName="Bus_stationContext.Route">
         <MappingFragment StoreEntitySet="Route">
+          <ScalarProperty Name="TravelTime" ColumnName="TravelTime" />
           <ScalarProperty Name="RouteNumber" ColumnName="RouteNumber" />
           <ScalarProperty Name="KM" ColumnName="KM" />
         </MappingFragment>
@@ -67,6 +68,8 @@
     <EntitySetMapping Name="Tickets">
       <EntityTypeMapping TypeName="Bus_stationContext.Ticket">
         <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="SeatNumber" ColumnName="SeatNumber" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
           <ScalarProperty Name="TicketNumber" ColumnName="TicketNumber" />
         </MappingFragment>
       </EntityTypeMapping>

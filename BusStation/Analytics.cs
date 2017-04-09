@@ -29,8 +29,9 @@ namespace BusStation
 			result.AppendFormat($"/t/t {ticket.TicketNumber} /n");
 			result.AppendFormat($"Дата: {ticket.Passage.Date} /n");
 			result.AppendFormat($"Рейс: {ticket.Passage.Schedule} /n");
+			result.AppendFormat($"Номер места: {ticket.SeatNumber} /n");
 			result.AppendFormat($"Пасспорт: {ticket.Passanger.Passport} /n");
-			result.AppendFormat($"Цена: {ticket.Passage.Bus.Cost * _context.Routes.Where(r => r.RouteNumber == ticket.Passage.RouteNumber).Select(r => r.KM/(40m)).FirstOrDefault()} рублей /n");
+			result.AppendFormat($"Цена: {ticket.Passage.Bus.Cost * _context.Routes.Where(r => r.RouteNumber == ticket.Passage.RouteNumber).Select(r => r.KM).FirstOrDefault()} рублей /n");
 
 			return result.ToString();
 		}

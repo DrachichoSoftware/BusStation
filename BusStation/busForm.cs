@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BusStation
 {
-    public partial class busForm : Form
+    public partial class BusForm : Form
     {
         private DataGridView busesDataGridView;
         private Button addBusButton;
@@ -61,7 +61,7 @@ namespace BusStation
 		private Button button4;
 		private Bus_Station_Context _context;
 
-        public busForm()
+        public BusForm()
         {
             InitializeComponent();
 

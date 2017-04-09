@@ -28,5 +28,10 @@ namespace BusStation
         public virtual City City1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Schedule> Schedules { get; set; }
-    }
+
+		public override string ToString()
+		{
+			return String.Format($"{RouteNumber}. {City} - {City1}");
+		}
+	}
 }

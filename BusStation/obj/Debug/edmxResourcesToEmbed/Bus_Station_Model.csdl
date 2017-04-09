@@ -62,6 +62,7 @@
     <NavigationProperty Name="City" Relationship="Self.FK_ROUTE_CITYFROM_CITY" FromRole="Route" ToRole="City" />
     <NavigationProperty Name="City1" Relationship="Self.FK_ROUTE_CITYTO_CITY" FromRole="Route" ToRole="City" />
     <NavigationProperty Name="Schedules" Relationship="Self.FK_SCHEDULE_REFERENCE_ROUTE" FromRole="Route" ToRole="Schedule" />
+    <Property Name="TravelTime" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Schedule">
     <Key>
@@ -80,6 +81,8 @@
     <Property Name="TicketNumber" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Passage" Relationship="Self.FK_TICKET_REFERENCE_PASSAGE" FromRole="Ticket" ToRole="Passage" />
     <NavigationProperty Name="Passanger" Relationship="Self.FK_TICKET_REFERENCE_PASSANGE" FromRole="Ticket" ToRole="Passanger" />
+    <Property Name="Discount" Type="Boolean" Nullable="false" />
+    <Property Name="SeatNumber" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Waybill">
     <Key>

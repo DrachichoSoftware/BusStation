@@ -18,11 +18,7 @@ namespace BusStation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            
-
-            Application.Run(new busForm());
-
-            
+            Application.Run(new BusForm());
         }
     }
 }

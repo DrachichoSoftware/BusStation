@@ -22,5 +22,5 @@ namespace BusStation
     
         public virtual Driver Driver { get; set; }
         public virtual Passage Passage { get; set; }
-    }
+	}
 }

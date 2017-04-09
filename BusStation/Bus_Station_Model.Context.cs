@@ -13,10 +13,10 @@ namespace BusStation
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Bus_Station_Entities : DbContext
+    public partial class Bus_Station_Context : DbContext
     {
-        public Bus_Station_Entities()
-            : base("name=Bus_Station_Entities")
+        public Bus_Station_Context()
+            : base("name=Bus_Station_Context")
         {
         }
     
