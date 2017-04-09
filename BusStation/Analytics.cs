@@ -30,8 +30,12 @@ namespace BusStation
 			result.AppendFormat($"Дата: {ticket.Passage.Date} /n");
 			result.AppendFormat($"Рейс: {ticket.Passage.Schedule} /n");
 			result.AppendFormat($"Номер места: {ticket.SeatNumber} /n");
-			result.AppendFormat($"Пасспорт: {ticket.Passanger.Passport} /n");
-			result.AppendFormat($"Цена: {ticket.Passage.Bus.Cost * _context.Routes.Where(r => r.RouteNumber == ticket.Passage.RouteNumber).Select(r => r.KM).FirstOrDefault()} рублей /n");
+			result.AppendFormat($"Пассажир: {ticket.Passanger} /n");
+			if (ticket.Discount)
+				result.AppendFormat($"Цена: {ticket.Passage.Bus.Cost * _context.Routes.Where(r => r.RouteNumber == ticket.Passage.RouteNumber).Select(r => r.KM).FirstOrDefault() * 0.9m} рублей /n");
+			else
+				result.AppendFormat($"Цена: {ticket.Passage.Bus.Cost * _context.Routes.Where(r => r.RouteNumber == ticket.Passage.RouteNumber).Select(r => r.KM).FirstOrDefault()} рублей /n");
+
 
 			return result.ToString();
 		}
@@ -57,7 +61,7 @@ namespace BusStation
 			result.AppendFormat($"Гос.Номер автомобиля: {waybill.Passage.Bus.Number} /n");
 			result.AppendFormat("/t/t Пассажиры: /n");
 			foreach (var ticket in waybill.Passage.Tickets)
-				result.AppendFormat($"{ticket.TicketNumber} /t {ticket.Passanger.Passport} /t {ticket.Passanger.FullName}");
+				result.AppendFormat($"{ticket.TicketNumber} /t {ticket.Passanger} /n");
 
 			return result.ToString();
 		}
