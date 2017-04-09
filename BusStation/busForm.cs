@@ -1279,7 +1279,7 @@ namespace BusStation
 					.Except(_context.Buses
 										.Where(b => b.Passages.Where(p => In(newPassage.Date + newPassage.DepartureTime,
 																				(p.Date + p.DepartureTime).AddMinutes(p.Schedule.Route.TravelTime),
-																				(newPassage.Date + newPassage.DepartureTime).AddMinutes(newPassage.Schedule.Route.TravelTime))).Count() > 1))
+																				(newPassage.Date + newPassage.DepartureTime).AddMinutes(newPassage.Schedule.Route.TravelTime))).Count() > 0))
 					.ToList();
 				
 				newPassage.Bus = addPassageForm.busСomboBox.SelectedItem as Bus;
@@ -1328,6 +1328,17 @@ namespace BusStation
 			newTicket.Passage = addTicketForm.passageComboBox.SelectedItem as Passage;
 			newTicket.Passanger = addTicketForm.passangerComboBox.SelectedItem as Passanger;
 			newTicket.TicketNumber =  int.Parse(addTicketForm.ticketNumberLabel.Text);
+
+			var soldSeatNumbers = newTicket.Passage.Tickets.Select(t => t.SeatNumber).ToList();
+			for (int i = 1; i <= newTicket.Passage.Bus.SeatCount; i++)
+			{
+				if (soldSeatNumbers.Contains(i))
+					continue;
+				else
+					newTicket.SeatNumber = i;
+
+				break;
+			}
 
 			_context.Tickets.Add(newTicket);
 			_context.SaveChanges();
