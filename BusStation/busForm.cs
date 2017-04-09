@@ -1317,7 +1317,7 @@ namespace BusStation
 
 			_context.Passages.Load();
 
-			addTicketForm.passageComboBox.DataSource = _context.Passages.Local.Where(p => p.Tickets.Count < p.Bus.SeatCount).ToList();
+			addTicketForm.passageComboBox.DataSource = _context.Passages.Local.Where(p => p.Tickets.Count < p.Bus.SeatCount).Where(p => (p.Date+p.DepartureTime) > DateTime.Now).ToList();
 			addTicketForm.passangerComboBox.DataSource = _context.Passangers.Local.ToList();
 
 			DialogResult result = addTicketForm.ShowDialog(this);
